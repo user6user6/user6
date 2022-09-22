@@ -10,22 +10,20 @@ using System.Windows.Forms;
 
 namespace user6
 {
-    public partial class Form1 : Form
+    public partial class MainMenu : Form
     {
-        public Form1()
+        public MainMenu()
         {
             InitializeComponent();
         }
         //создаём объект второй формы
-        MainMenu mainmenu = new MainMenu();
+        Redaktor redaktor = new Redaktor();
         private void button1_Click(object sender, EventArgs e)
         {
-            //назначаем главную форму
-            mainmenu.Owner = this;
             //показываем форму
-            mainmenu.Show();
-            //скрываем форму авторизации
-            this.Hide();
+            redaktor.Show();
+            //закрываем форму
+            this.Close();
         }
     }
 }
