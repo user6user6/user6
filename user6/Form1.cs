@@ -18,14 +18,30 @@ namespace user6
         }
         //создаём объект второй формы
         MainMenu mainmenu = new MainMenu();
+        //создаём переменные для авторизации
+        public string login, password;
         private void button1_Click(object sender, EventArgs e)
         {
-            //назначаем главную форму
-            mainmenu.Owner = this;
-            //показываем форму
-            mainmenu.Show();
-            //скрываем форму авторизации
-            this.Hide();
+            ///получаем вводимый логин и пароль
+            login = textBox1.Text;
+            password = textBox2.Text;
+            //если логин и пароль правильный пропускаем дальше,если нет выводит сообщение об ошибке
+            if(login=="inspector"&&password=="inspector")
+            {
+                //назначаем главную форму
+                mainmenu.Owner = this;
+                //показываем форму
+                mainmenu.Show();
+                //скрываем форму авторизации
+                this.Hide();
+            }
+            else
+            {
+                label3.Text = "Неверный логин и/или пароль";
+                //очищаем текстбоксы
+                textBox1.Text = "";
+                textBox2.Text = "";
+            }
         }
     }
 }
